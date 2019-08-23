@@ -14,6 +14,13 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use('Route');
+const { grapqh, graphqli } = require('../app/graphql');
+
 
 Route.on('/').render('welcome')
+
+Route.route('/graphql', grapqh , ['GET', 'POST'])
+
+Route.get('/graphiql', graphqli);
+
