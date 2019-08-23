@@ -20,6 +20,8 @@ const { grapqh, graphqli } = require('../app/graphql');
 
 Route.on('/').render('welcome')
 
+Route.get('/controlador','MicontroladorController.index')
+
 Route.route('/graphql', grapqh , ['GET', 'POST'])
 
 Route.get('/graphiql', graphqli);
